@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "491901508619",
+    "firebase_url": "https://automatedgreenhouse-edb75-default-rtdb.firebaseio.com",
+    "project_id": "automatedgreenhouse-edb75",
+    "storage_bucket": "automatedgreenhouse-edb75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491901508619:android:58be1e0d5b400c96bb3b0e",
+        "android_client_info": {
+          "package_name": "com.example.automatedgreenhouse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491901508619-ads9go4c3v7jealrqqonfa6k835bn7gr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTsevL9WXuUSVtVYHyz2l8txQ0gNtrCKk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491901508619-ads9go4c3v7jealrqqonfa6k835bn7gr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

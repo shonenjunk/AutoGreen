@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AutomatedGreenhouse</string>
+    <string name="moist">moist</string>
+    <string name="sun">sunlight</string>
+    <string name="temp">temp</string>
+</resources>
