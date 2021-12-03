@@ -126,4 +126,86 @@
         android:text="@string/temp"
         app:layout_constraintStart_toEndOf="@+id/imgTemp"
         app:layout_constraintTop_toBottomOf="@+id/tvSun" />
+    
+    <TextView
+        android:id="@+id/tvHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hours"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgSun"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="247dp"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/edtHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tvHours"
+        app:layout_constraintTop_toTopOf="@+id/imgSun"
+        android:text="0"/>
+
+    <TextView
+        android:id="@+id/tvMins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mins"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHours"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="235dp"/>
+
+    <EditText
+        android:id="@+id/edtMins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tvMins"
+        app:layout_constraintTop_toBottomOf="@+id/tvHours"
+        android:layout_marginTop="20dp"
+        android:text="0"/>
+
+    <TextView
+        android:id="@+id/tvSeconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/seconds"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMins"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="230dp"/>
+
+    <EditText
+        android:id="@+id/edtSeconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tvSeconds"
+        app:layout_constraintTop_toBottomOf="@+id/tvMins"
+        android:layout_marginTop="20dp"
+        android:text="0"/>
+
+    <Button
+        android:id="@+id/btnSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSeconds"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="245dp"/>
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSeconds"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="210dp"/>
+    
 </androidx.constraintlayout.widget.ConstraintLayout>
