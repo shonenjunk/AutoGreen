@@ -3,4 +3,9 @@
     <string name="moist">moist</string>
     <string name="sun">sunlight</string>
     <string name="temp">temp</string>
+    <string name="hours">Hours:</string>
+    <string name="mins">Minutes:</string>
+    <string name="seconds">Seconds:</string>
+    <string name="set">SET</string>
+    <string name="cancel">CANCEL SCHEDULE</string>
 </resources>
