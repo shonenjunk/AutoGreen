@@ -22,7 +22,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-
     //Minimum moisture value allowed before the automatic water feature activates
     public static final Long MIN_MOISTURE = Long.valueOf(500 / 10);
     public static final Long MAX_MOISTURE = Long.valueOf(650 / 10);
@@ -91,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // initialize the database reference
-         //database = FirebaseDatabase.getInstance();
+        //database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Greenhouse");
 
 
@@ -105,21 +104,20 @@ public class MainActivity extends AppCompatActivity {
                 String moisture = moistureLevel.toString() + "%";
                 String temperature = dataSnapshot.child("temperature").getValue(Long.class).toString() + "°C";
                 String sunlight = dataSnapshot.child("sunlight").getValue(Long.class).toString() + "%";
-                Boolean waterFlag = dataSnapshot.child("water").getValue(Boolean.class);
+                //Boolean waterFlag = dataSnapshot.child("water").getValue(Boolean.class); //Replaced with "isWatering"
+                Boolean hasWatered = dataSnapshot.child("has_watered").getValue(Boolean.class); //Check if raspberry pi is currently, or has recently watered the plant (15 minute wait time)
                 //output the values from the database with units added in.
                 tvMoisture.setText(moisture);
                 tvTemperature.setText(temperature);
                 tvSunlight.setText(sunlight);
 
                 //if the moisture gets below a certain threshold, then check if water boolean is false, then automatically tell the pi to water the plants.
-                if( (moistureLevel.compareTo(MIN_MOISTURE) < 0) && !waterFlag){
+                if( (moistureLevel.compareTo(MIN_MOISTURE) < 0) && !hasWatered){
                     waterButtonClicked();
                 }
-                else if ( (moistureLevel.compareTo(MAX_MOISTURE) > 0)  && waterFlag){ //if moisture is greater than the maximum moisture and water boolean is true, then set it to false
-                    turnWaterOff();
-                }
-
-
+                //else if ( (moistureLevel.compareTo(MAX_MOISTURE) > 0)  && hasWatered){ //if moisture is greater than the maximum moisture and water boolean is true, then set it to false
+                //    turnWaterOff();
+                //}
                 Log.d("Moisture: ", moisture);
                 Log.d("Sunlight: ", sunlight);
                 Log.d("Temperature: ", temperature);
@@ -182,13 +180,12 @@ public class MainActivity extends AppCompatActivity {
                 edtSecond.setVisibility(View.INVISIBLE);
                 btnSchedule.setVisibility(View.INVISIBLE);
 
-                timer.scheduleAtFixedRate(new TimerTask(){
+                timer.scheduleAtFixedRate(new TimerTask() {
                     @Override
-                    public void run(){
+                    public void run() {
                         Log.e("MainActivity", "Timer");
                         waterButtonClicked();
-                    }
-                },0,interval);
+                    }}, interval, interval);
             }
         });
 
@@ -200,14 +197,7 @@ public class MainActivity extends AppCompatActivity {
                 btnCancelSchedule.setVisibility(View.INVISIBLE);
             }
         });
-
-
     }
-
-
-
-
-
 
     //function to update the water_flag to be true
     public void waterButtonClicked(){
@@ -236,7 +226,6 @@ public class MainActivity extends AppCompatActivity {
 
         //myRef.setValue(true);
     }
-
 
     //function to schedule waterings
     public void scheduleButtonClicked(){
