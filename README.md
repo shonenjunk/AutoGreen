@@ -1,2 +1,2 @@
 # AutoGreen
-Automated Greenhouse application for Capstone Project
+Raspberry Pi's code for the Automated Greenhouse Capstone Project
